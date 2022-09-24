@@ -13,6 +13,14 @@ variable "db_pass" {
   sensitive = true
 }
 
+data "aws_ssm_parameter" "db_pass" {
+  name = var.param_db_pass_name
+}
+
+data "aws_ssm_parameter" "db_user" {
+  name = var.param_db_user_name
+}
+
 variable "s3_bucket" {
   type    = string
   default = "my-app-bucket"
