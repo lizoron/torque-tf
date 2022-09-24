@@ -1,16 +1,6 @@
 
 data "aws_ami" "ubuntu" {
   most_recent = true
-  
-variable "param_db_pass_name" {
-  type    = string
-  default = "example_db_password"
-}
-
-variable "param_db_user_name" {
-  type    = string
-  default = "example_db_user"
-}
 
 data "aws_ssm_parameter" "db_pass" {
   name = var.param_db_pass_name
