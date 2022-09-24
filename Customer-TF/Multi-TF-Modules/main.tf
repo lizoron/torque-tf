@@ -1,14 +1,6 @@
 
 data "aws_ami" "ubuntu" {
   most_recent = true
-  
-data "aws_ssm_parameter" "db_pass" {
-  name = var.param_db_pass_name
-}
-
-data "aws_ssm_parameter" "db_user" {
-  name = var.param_db_user_name
-}
 
   filter {
     name   = "name"
