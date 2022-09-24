@@ -10,16 +10,6 @@ data "aws_ssm_parameter" "db_user" {
   name = var.param_db_user_name
 }
 
-output "db_pass" {
-  value = data.aws_ssm_parameter.db_pass.value
-  sensitive = true
-}
-
-output "db_user" {
-  value = data.aws_ssm_parameter.db_user.value
-  sensitive = true
-}
-
   filter {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
