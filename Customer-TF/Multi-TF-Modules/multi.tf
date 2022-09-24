@@ -22,10 +22,6 @@ resource "aws_instance" "myapp" {
     Name = var.name
   }
 }
-variable "aws_region" {
-  type    = string
-  default = "us-west-2"
-}
 
 variable "param_db_pass_name" {
   type    = string
@@ -53,11 +49,6 @@ output "db_pass" {
 output "db_user" {
   value = data.aws_ssm_parameter.db_user.value
   sensitive = true
-}
-
-provider "aws" {
-  region  = var.aws_region
-
 }
 
 terraform {
