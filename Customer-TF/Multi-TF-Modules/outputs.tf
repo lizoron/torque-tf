@@ -1,6 +1,5 @@
 output "public_dns" {
-  value = 'http://aws_instance.myapp.public_dns'
-  kind: link
+  value = "http://aws_instance.myapp.public_dns"
 }
 
 output "db_pass" {
