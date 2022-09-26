@@ -1,5 +1,5 @@
 output "public_dns" {
-  value = "aws_instance.myapp.public_dns:8080"
+  value 'aws_instance.myapp.public_dns:8080'
   kind: link
 }
 
