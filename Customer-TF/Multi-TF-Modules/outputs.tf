@@ -1,5 +1,6 @@
 output "public_dns" {
   value = aws_instance.myapp.public_dns
+  kind: link
 }
 
 output "db_pass" {
