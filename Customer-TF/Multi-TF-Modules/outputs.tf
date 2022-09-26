@@ -1,5 +1,5 @@
 output "public_dns" {
-  value = data.aws_instance.myapp.public_dns.value
+  value = aws_instance.myapp.public_dns
 }
 
 output "db_pass" {
