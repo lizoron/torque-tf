@@ -1,5 +1,6 @@
 output "public_dns" {
-  value = "http://aws_instance.myapp.public_dns"
+  value = aws_instance.myapp.public_dns:8080
+  kind: link
 }
 
 output "db_pass" {
