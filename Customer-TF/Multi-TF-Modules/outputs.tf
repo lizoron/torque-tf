@@ -11,3 +11,7 @@ output "db_user" {
   value = data.aws_ssm_parameter.db_user.value
   sensitive = true
 }
+
+output "bucket_name" {
+    value = aws_s3_bucket.bucket.bucket
+}
