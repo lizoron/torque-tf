@@ -31,3 +31,13 @@ resource "aws_instance" "myapp" {
     Name = var.name
   }
 }
+
+resource "aws_s3_bucket" "bucket" {
+    bucket = "my-bucket-test-1995"
+    force_destroy = true  
+    acl = "private"
+
+    tags = {
+    Name        = "My bucket"
+    }
+}
