@@ -5,8 +5,7 @@ variable "name" {
 
 variable "s3_bucket" {
   type    = string
-  #default = "my-app-bucket"
-  default = "cs-eric-s-bucket"
+  default = "my-app-bucket"
 }
 
 variable "aws_region" {
