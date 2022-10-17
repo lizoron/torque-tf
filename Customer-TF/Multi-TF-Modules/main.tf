@@ -32,7 +32,7 @@ resource "aws_instance" "myapp" {
   }
 }
 
-resource "aws_s3_bucket" "bucket" {
+resource "aws_s3_bucket_acl" "bucket" {
     bucket = "cs-eric-s-bucket"
     force_destroy = true  
     acl = "private"
