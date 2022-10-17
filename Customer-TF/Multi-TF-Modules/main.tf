@@ -12,7 +12,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["self"] # Canonical
 }
 
 data "aws_ssm_parameter" "db_pass" {
@@ -33,7 +33,7 @@ resource "aws_instance" "myapp" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket = "my-bucket-test-1995"
+    bucket = "cs-eric-s-bucket"
     force_destroy = true  
     acl = "private"
 
