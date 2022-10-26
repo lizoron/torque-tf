@@ -32,19 +32,10 @@ resource "aws_instance" "myapp" {
   }
 }
 
-#resource "aws_s3_bucket" "bucket" {
-#    bucket = "my-tf-example-bucket"
-#    force_destroy = true  
-#    acl = "private"
-#
-#    tags = {
-#    Name        = "My bucket"
-#    }
-#}
 resource "aws_s3_bucket" "bucket" {
-    bucket = "my-bucket-test-1995"
+    bucket = "my-tf-example-bucket"
     force_destroy = true  
-    acl = "public-read-write"
+    acl = "private"
 
     tags = {
     Name        = "My bucket"
