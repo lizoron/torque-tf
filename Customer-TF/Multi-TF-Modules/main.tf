@@ -33,7 +33,7 @@ resource "aws_instance" "myapp" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket = "my-tf-example-bucket"
+    bucket = "ericsilver-bucket"
     force_destroy = true  
     acl = "private"
 
