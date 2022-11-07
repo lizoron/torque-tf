@@ -13,7 +13,7 @@ variable "db_pass" {
   sensitive = true
 }
 
-variable "s3_bucket" {
+variable "bucket_name" {
   type    = string
   default = "my-app-bucket"
 }
