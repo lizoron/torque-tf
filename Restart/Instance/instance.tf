@@ -26,7 +26,7 @@ resource "aws_instance" "myapp" {
 
 resource "aws_s3_bucket" "bucket" {
     #bucket = "ericsilver-bucket"
-    bucket = var.aws_s3_bucket.bucket_name.id
+    bucket = var.aws_s3_bucket.bucket.id
     force_destroy = true  
     acl = "private"
 
