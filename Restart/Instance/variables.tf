@@ -6,16 +6,14 @@ variable "name" {
 variable "db_user" {
   type    = string
   sensitive = true
-  default = "admin"
 }
 
 variable "db_pass" {
   type    = string
   sensitive = true
-  default = "admin"
 }
 
-variable "bucket_name" {
+variable "s3_bucket" {
   type    = string
   default = "my-app-bucket"
 }
