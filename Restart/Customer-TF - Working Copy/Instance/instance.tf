@@ -23,3 +23,14 @@ resource "aws_instance" "myapp" {
     Name = var.name
   }
 }
+
+resource "aws_s3_bucket" "bucket" {
+    #bucket = "ericsilver-bucket"
+    bucket = "aws_s3_bucket.bucket.id"
+    force_destroy = true  
+    acl = "private"
+
+    tags = {
+    Name        = "My bucket"
+    }
+}
