@@ -24,11 +24,11 @@ resource "aws_instance" "myapp" {
   }
 }
 
+#new below
 resource "aws_s3_bucket" "bucket" {
-    #bucket = "ericsilver-bucket"
-    bucket = "aws_s3_bucket.bucket.id"
+    bucket = var.s3_bucket
     force_destroy = true  
-    acl = "private"
+    acl = "public-read-write"
 
     tags = {
     Name        = "My bucket"
