@@ -21,6 +21,7 @@ resource "aws_instance" "myapp" {
 
   tags = {
     Name = var.names
+    #Step 2
     #Name = var.name
   }
 }
