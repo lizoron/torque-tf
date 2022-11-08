@@ -3,14 +3,9 @@ variable "name" {
   default = "My Instance"
 }
 
-#variable "s3_bucket" {
-#  type    = string
-#  default = "my-app-bucket"
-#}
-
-variable "bucket_name" {
+variable "s3_bucket" {
   type    = string
-  default = "appbucketsericsilver"
+  default = "my-app"
 }
 
 variable "aws_region" {

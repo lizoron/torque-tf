@@ -33,6 +33,7 @@ resource "aws_instance" "myapp" {
 }
 
 resource "aws_s3_bucket" "bucket_name" {
+    bucket = var.aws_s3_bucket
     force_destroy = true  
     acl = "private"
 
