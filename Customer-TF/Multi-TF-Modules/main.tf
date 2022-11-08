@@ -32,7 +32,7 @@ resource "aws_instance" "myapp" {
   }
 }
 
-resource "aws_s3_bucket" "bucket_name" {
+resource "aws_s3_bucket" "bucket" {
     bucket = var.aws_s3_bucket
     force_destroy = true  
     acl = "private"
@@ -41,12 +41,3 @@ resource "aws_s3_bucket" "bucket_name" {
     Name        = "My bucket"
     }
 }
-#resource "aws_s3_bucket" "bucket" {
-#    bucket = "ericsilver-bucket"
-#    force_destroy = true  
-#    acl = "private"
-#
-#    tags = {
-#    Name        = "My bucket"
-#    }
-#}
