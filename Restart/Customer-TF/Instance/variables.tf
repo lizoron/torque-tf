@@ -17,8 +17,8 @@ variable "s3_bucket" {
   type    = string
   default = "my-app-bucket"
 }
-#Step 1
-#variable "aws_region" {
-#  type    = string
-#  default = "us-west-2"
-#}
+
+variable "aws_region" {
+  type    = string
+  default = "us-west-2"
+}
