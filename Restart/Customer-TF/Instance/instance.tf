@@ -27,7 +27,7 @@ resource "aws_instance" "myapp" {
 resource "aws_s3_bucket" "bucket" {
     bucket = var.s3_bucket
     force_destroy = true  
-    acl = "public-read-write"
+    acl = "private"
 
     tags = {
     Name        = "My bucket"
