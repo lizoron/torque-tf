@@ -15,7 +15,7 @@ variable "db_pass" {
 
 variable "s3_bucket" {
   type    = string
-  default = "my-app-bucket"
+  default = "my-app"
 }
 
 variable "aws_region" {
