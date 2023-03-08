@@ -12,9 +12,9 @@ provider "aws" {
   region = var.region
 }
 
-locals {
-  should_use_encryption = var.encryption_key_arn != ""
-}
+# locals {
+  # should_use_encryption = var.encryption_key_arn != ""
+# }
 
 data "http" "website_file" {
   url = "https://torque-prod-cfn-assets.s3.amazonaws.com/public-assets/TetrisJS.html"
@@ -45,18 +45,18 @@ resource "aws_s3_bucket_acl" "bucket_acl" {
   acl = "public-read"
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encrypt_conf" {
+# resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encrypt_conf" {
   # Do not instantiate this resource if no arn value recieved as input
-  count = local.should_use_encryption ? 1 : 0
-  bucket = aws_s3_bucket.bucket.bucket
+  # count = local.should_use_encryption ? 1 : 0
+  # bucket = aws_s3_bucket.bucket.bucket
 
-  rule {
-    apply_server_side_encryption_by_default {
-      kms_master_key_id = var.encryption_key_arn
-      sse_algorithm     = "aws:kms"
-    }
-  }
-}
+  # rule {
+    # apply_server_side_encryption_by_default {
+      # kms_master_key_id = var.encryption_key_arn
+      # sse_algorithm     = "aws:kms"
+    # }
+  # }
+# }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.bucket.id
