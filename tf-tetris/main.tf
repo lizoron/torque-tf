@@ -83,7 +83,7 @@ EOF
 resource "aws_s3_object" "webapp_file" {
   acl          = "public-read"
   key          = "index.html"
-  bucket       = aws_s3_bucket.bucket.website_endpoint
+  bucket       = aws_s3_bucket.bucket.id
   content      = data.http.website_file.response_body
   content_type = "text/html"
 }
