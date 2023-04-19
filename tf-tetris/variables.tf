@@ -1,6 +1,7 @@
 variable "region" {
-  type = list(string)
-  default = ["us-west-2", "us-east-1"]
+  type = string
+  default = ""
+  allowed_values = ["us-west-2", "us-east-1"]
 }
 variable "prefix" {}
 variable "name" {}
