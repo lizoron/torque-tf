@@ -12,9 +12,9 @@ provider "aws" {
   region = var.region
 }
 
-locals {
-  should_use_encryption = var.encryption_key_arn != ""
-}
+# locals {
+  # should_use_encryption = var.encryption_key_arn != ""
+# }
 
 data "http" "website_file" {
   url = "https://torque-prod-cfn-assets.s3.amazonaws.com/public-assets/TetrisJS.html"
