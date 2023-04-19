@@ -1,5 +1,5 @@
 variable "region" {
-  type = list
+  type = list(string)
   default = ["us-west-2", "us-east-1"]
 }
 variable "prefix" {}
