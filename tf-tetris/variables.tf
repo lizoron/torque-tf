@@ -1,5 +1,5 @@
 variable "region" {
-  type = string
+  type = list
   default = ""
   allowed_values = ["us-west-2", "us-east-1"]
 }
