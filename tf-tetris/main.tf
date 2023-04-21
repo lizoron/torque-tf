@@ -39,15 +39,6 @@ resource "aws_s3_bucket_website_configuration" "bucket_conf" {
 }
 
 
-resource "aws_s3_bucket_acl" "bucket_acl" {
-  depends_on = [
-        aws_s3_bucket_ownership_controls.ownership_controls.bucket.id,
-        aws_s3_bucket_public_access_block.bucket.id,
-  ]
-  bucket = aws_s3_bucket.bucket.id
-  acl = "public-read"
-}
-
 # resource "aws_s3_bucket_server_side_encryption_configuration" "bucket_encrypt_conf" {
   # Do not instantiate this resource if no arn value recieved as input
   # count = local.should_use_encryption ? 1 : 0
@@ -106,4 +97,13 @@ resource "aws_s3_bucket_ownership_controls" "ownership_controls" {
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
+}
+
+resource "aws_s3_bucket_acl" "bucket_acl" {
+  depends_on = [
+        aws_s3_bucket_ownership_controls.ownership_controls.bucket.id,
+        aws_s3_bucket_public_access_block.bucket.id,
+  ]
+  bucket = aws_s3_bucket.bucket.id
+  acl = "public-read"
 }
