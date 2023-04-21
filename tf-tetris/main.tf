@@ -41,8 +41,8 @@ resource "aws_s3_bucket_website_configuration" "bucket_conf" {
 
 resource "aws_s3_bucket_acl" "bucket_acl" {
   depends_on = [
-        aws_s3_bucket_ownership_controls.ownership_controls.ownership_controls
-        aws_s3_bucket_public_access_block.access_block
+        aws_s3_bucket_ownership_controls.ownership_controls.ownership_controls,
+        aws_s3_bucket_public_access_block.access_block,
   ]
   bucket = aws_s3_bucket.bucket.id
   acl = "public-read"
