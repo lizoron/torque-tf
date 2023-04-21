@@ -82,7 +82,7 @@ resource "aws_s3_object" "webapp_file" {
   content_type = "text/html"
 }
 
-resource "aws_s3_bucket_public_access_block" "access_block" {
+resource "aws_s3_bucket_public_access_block" "acc_bl" {
   bucket = aws_s3_bucket.bucket.id
 
   block_public_acls       = false
@@ -91,7 +91,7 @@ resource "aws_s3_bucket_public_access_block" "access_block" {
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_ownership_controls" "ownership_controls" {
+resource "aws_s3_bucket_ownership_controls" "owner_cont" {
   bucket = aws_s3_bucket.bucket.id
 
   rule {
@@ -101,8 +101,8 @@ resource "aws_s3_bucket_ownership_controls" "ownership_controls" {
 
 resource "aws_s3_bucket_acl" "bucket_acl" {
   depends_on = [
-        aws_s3_bucket_ownership_controls.ownership_controls.bucket.id,
-        aws_s3_bucket_public_access_block.bucket.id,
+        aws_s3_bucket_ownership_controls.ownership_controls.bucket_acl,
+        aws_s3_bucket_public_access_block.bucket_acl,
   ]
   bucket = aws_s3_bucket.bucket.id
   acl = "public-read"
