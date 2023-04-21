@@ -76,8 +76,8 @@ EOF
 
 resource "aws_s3_object" "webapp_file" {
     depends_on = [
-        aws_s3_bucket_ownership_controls,
-        aws_s3_bucket_public_access_block,
+        aws_s3_bucket_ownership_controls.owner_cont.id,
+        aws_s3_bucket_public_access_block.acc_bl.id,
   ]
   acl          = "public-read"
   key          = "index.html"
@@ -105,8 +105,8 @@ resource "aws_s3_bucket_ownership_controls" "owner_cont" {
 
 resource "aws_s3_bucket_acl" "bucket_acl" {
   depends_on = [
-        aws_s3_bucket_ownership_controls,
-        aws_s3_bucket_public_access_block,
+        aws_s3_bucket_ownership_controls.owner_cont.id,
+        aws_s3_bucket_public_access_block.acc_bl.id,
   ]
   bucket = aws_s3_bucket.bucket.id
   acl = "public-read"
