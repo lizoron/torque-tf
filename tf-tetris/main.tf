@@ -53,6 +53,10 @@ resource "aws_s3_bucket_website_configuration" "bucket_conf" {
 # }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
+  depends_on = [
+        aws_s3_bucket_ownership_controls.owner_cont,
+        aws_s3_bucket_public_access_block.acc_bl,
+  ]
   bucket = aws_s3_bucket.bucket.id
   policy = <<EOF
 {
@@ -75,7 +79,7 @@ EOF
 }
 
 resource "aws_s3_object" "webapp_file" {
-    depends_on = [
+  depends_on = [
         aws_s3_bucket_ownership_controls.owner_cont,
         aws_s3_bucket_public_access_block.acc_bl,
   ]
