@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Torque-Blueprint-Marketplace",
+			"path": "../../../../PycharmProjects/Torque-Blueprint-Marketplace"
+		},
+		{
+			"name": "terraform-beginner-to-advanced-resource",
+			"path": "../terraform-beginner-to-advanced-resource"
+		}
+	],
+	"settings": {}
+}
