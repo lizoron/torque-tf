@@ -1,14 +1,30 @@
-terraform_version: "1.4.6"
+spec_version: 2
+description: test deployment that just takes 15 minutes to deploy by default
 
-providers:
-  aws:
-    region: "us-west-2"
+inputs:
+  wait time seconds:
+    type: string
+    description: time for deployment to take in seconds
+    default: 604
+  agent:
+    type: agent
+    default: aws2
 
-resources:
-  - name: "example_instance"
-    type: "aws_instance"
-    config:
-      ami: "ami-0123456789abcdef0"
-      instance_type: "t2.micro"
-      tags:
-        Name: "example-instance"
+grains:
+  wait: 
+    kind: terraform
+    spec:
+      source:
+        store: torque-tf
+        path: blueprints
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs:
+      - wait_time: '{{ .inputs.["wait time seconds"] }}'
+      env-vars:
+        - AWS_SECRET_KEY: '{{ .params.aws.secret_key }}'
+        - AWS_ACCESS_KEY: '{{ .params.aws_access_key }}'
+        - http_proxy: 'http://blah22'
+        - https_proxy: 'https://blah'
+
+      tf-version 1.2.3
