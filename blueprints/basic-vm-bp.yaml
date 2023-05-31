@@ -1,0 +1,14 @@
+terraform_version: "1.4.6"
+
+providers:
+  aws:
+    region: "us-west-2"
+
+resources:
+  - name: "example_instance"
+    type: "aws_instance"
+    config:
+      ami: "ami-0123456789abcdef0"
+      instance_type: "t2.micro"
+      tags:
+        Name: "example-instance"
