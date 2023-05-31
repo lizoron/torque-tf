@@ -26,5 +26,4 @@ grains:
         - AWS_ACCESS_KEY: '{{ .params.aws_access_key }}'
         - http_proxy: 'http://blah22'
         - https_proxy: 'https://blah'
-
-      tf-version 1.2.3
+      tf-version: 1.2.3
