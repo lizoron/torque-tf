@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TopologyInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Details Name="test inputs" Alias="test inputs" Public="true" DefaultDuration="120" EnableSandboxSave="false" AbstractOnSavePolicy="Default" IsPersistentSandbox="false" TopologyId="f31971c7-dba3-4afe-8d72-8fe43ae5e684" BaseTopologyId="">
+    <Categories />
+    <Diagram Zoom="1" NodeSize="Medium" />
+  </Details>
+  <AbstractResources>
+    <AbstractResource PositionX="538" PositionY="157" Name="GenericResource2*" Shared="false" ResourceFamily="Generic Resource" ReturnToAbstractOnSave="false">
+      <Quantity Published="true" Value="2" />
+      <ResourceModels Published="true">
+        <ResourceModel>GenericResoureModel</ResourceModel>
+        <ResourceModel>Newshell</ResourceModel>
+      </ResourceModels>
+      <SubResources>
+        <AbstractResource Name="Port1*" Shared="false" ResourceFamily="Generic Port" ReturnToAbstractOnSave="false">
+          <Quantity Published="false" Value="1" />
+          <ResourceModels Published="false">
+            <ResourceModel>Generic Ethernet Port</ResourceModel>
+          </ResourceModels>
+          <Attributes>
+            <Requirement Name="Autoneg Capability" Published="false">
+              <Value>EqualsTextual 1 Gbps FD</Value>
+            </Requirement>
+            <Requirement Name="connectedToL2" Published="true">
+              <Value>EqualsTextual False</Value>
+              <Value>EqualsTextual True</Value>
+            </Requirement>
+            <Requirement Name="Protocol Type" Published="false">
+              <Value>EqualsTextual Ethernet</Value>
+            </Requirement>
+            <Requirement Name="Speed" Published="false">
+              <Value>EqualsTextual 1 Gbps</Value>
+            </Requirement>
+            <Requirement Name="Duplex" Published="true">
+              <Value>AnyTextual </Value>
+            </Requirement>
+            <AdditionalInfo Name="Duplex" Published="true" />
+          </Attributes>
+        </AbstractResource>
+      </SubResources>
+    </AbstractResource>
+  </AbstractResources>
+  <Apps />
+  <Inputs>
+    <GlobalInput Name="global1" Type="String" AttributeName="" />
+    <RequirementsInput Name="Quantity" DefaultValue="2" ResourceName="GenericResource2*" InputType="Quantity" />
+    <RequirementsInput Name="connectedToL2" DefaultValue="" Description="" ResourceName="GenericResource2*/Port1*" InputType="Attribute" />
+    <RequirementsInput Name="Duplex" Description="" ResourceName="GenericResource2*/Port1*" InputType="Attribute" />
+    <RequirementsInput Name="Model" DefaultValue="" ResourceName="GenericResource2*" InputType="Model" />
+    <AdditionalInfoInput Name="Duplex" Description="" ResourceName="GenericResource2*/Port1*" />
+  </Inputs>
+</TopologyInfo>
