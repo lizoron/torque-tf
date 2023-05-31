@@ -16,7 +16,7 @@ grains:
     spec:
       source:
         store: torque-tf
-        path: blueprints
+        path: github.com/lizoron/torque-tf/tree/master/blueprints
       agent:
         name: '{{ .inputs.agent }}'
       inputs:
